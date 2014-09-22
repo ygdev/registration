@@ -1,0 +1,155 @@
+<?php
+// template for registration/index/view
+
+/* @var $this Ymca_Registration_Block_Student */
+?>
+<div class="col-lg-12">
+    <div class="bs-example bs-example-type"><h1><?php echo$this->getName()?></h1>
+    <h4><?php echo $this->getDelegation()?></h4></div>
+</div>
+<div class="col-lg-8">
+
+    <div class="bs-example table-responsive">
+        <table class="table table-striped table-hover ">
+            <tbody>
+            <tr><td>Years in Program</td>
+                <td><?php echo$this->getYears()?></td></tr>
+            <tr><td>Grade</td>
+                <td><?php echo$this->getGrade()?></td></tr>
+            <tr><td>Ethnicity</td>
+                <td><?php echo$this->getEthnicity()?></td></tr>
+            <tr><td>Voter Code</td>
+                <td><?php echo$this->getCode()?></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<?php /* options */?>
+<div class="col-lg-4">
+    <div class="bs-example">
+        <div class="list-group">
+            <a href="<?php echo Mage::getUrl('*/*/edit', array('id'=>$this->getStudentId()))?>" class="list-group-item">Edit Delegate</a>
+            <a href="<?php echo Mage::getUrl('bills/index/submit', array('student_id'=>$this->getStudentId()))?>" class="list-group-item">Submit a Bill for this Delegate</a>
+            <a href="<?php echo Mage::getUrl('*/*/delete', array('id'=>$this->getStudentId()))?>" class="list-group-item list-group-item-danger">Delete Delegate</a>
+        </div>
+    </div>
+</div>
+<?php /* events */?>
+<div class="col-lg-8">
+    <div class="page-header">
+        <h3 id="events">Events Registered</h3>
+    </div>
+    <div class="bs-example table-responsive">
+        <table class="table table-striped table-hover ">
+                <thead>
+                <tr>
+                    <th>Event Name</th>
+                    <th>Attended/Planning to Attend?</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Youth Summit 2013-2014</td>
+                    <td><span class="label label-<?php echo$this->getYouthSummitCssClass()?>"><?php echo$this->getYouthSummit()?></span></td>
+                </tr>
+                <tr>
+                    <td>Legislative Weekend 2013-2014</td>
+                    <td><span class="label label-<?php echo$this->getLegislativeWeekendCssClass()?>"><?php echo$this->getLegislativeWeekend()?></span></td>
+                </tr>
+                </tbody>
+        </table>
+    </div>
+</div>
+<?php /* bill submission status */?>
+<div class="col-lg-12">
+    <div class="page-header">
+        <h3 id="bill">Bill Submission Status</h3>
+    </div>
+    <div class="bs-example table-responsive">
+        <table class="table table-striped table-hover ">
+            <thead>
+            <tr>
+                <th>Program Year</th>
+                <th>Bill Name</th>
+                <th>Bill Submission Status</th>
+                <th>Link</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2012-2013</td>
+                <td><span class="label<?php echo $this->hasBill() ? " label-success":" label-warning";?>"><?php echo $this->hasBill()?$this->getBillNumber():"n/a";?></span></td>
+                <td><span class="label <?php echo $this->isBillSubmitted() ? " label-success":" label-warning";?>"><?php echo $this->isBillSubmitted() ? "Submitted":"Not Submitted";?></span></td>
+                <td><?php echo $this->getBillCell()?></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="col-lg-12">
+    <div class="page-header">
+        <h3 id="emergency">Emergency Contact</h3>
+    </div>
+    <div class="bs-example table-responsive">
+        <table class="table table-striped table-hover ">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Relationship</th>
+                <th>Phone Number</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><?php echo $this->getEmergencyName();?></td>
+                <td><?php echo $this->getEmergencyRelation();?></td>
+                <td><?php echo $this->getEmergencyNumber();?></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<?php
+// transportation
+/*
+<div class="col-lg-12">
+    <div class="page-header">
+        <h3 id="transporation">Transportation</h3>
+    </div>
+    <div class="bs-example table-responsive">
+        <table class="table table-striped table-hover ">
+            <thead>
+            <tr>
+                <th>Year</th>
+                <th>Trip</th>
+                <th>Transporation Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2013-2014</td>
+                <td>To Youth Summit: </td>
+                <td><?php echo $this->getToYouthSummit();?></td>
+            </tr>
+            <tr>
+                <td>2013-2014</td>
+                <td>From Youth Summit: </td>
+                <td><?php echo $this->getFromYouthSummit();?></td>
+            </tr>
+            <tr>
+                <td>2013-2014</td>
+                <td>To Legislative Weekend: </td>
+                <td><?php echo $this->getToLegislativeWeekend();?></td>
+            </tr>
+            <tr>
+                <td>2013-2014</td>
+                <td>From Legislative Weekend: </td>
+                <td><?php echo $this->getFromLegislativeWeekend();?></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+*/
+?>

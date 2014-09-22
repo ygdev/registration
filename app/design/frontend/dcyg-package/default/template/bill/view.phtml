@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="row">
+        <div class="col-lg-8">
+            <a href="<?php echo $this->getDelegateLink()?>"><h3><?php echo $this->getDelegateName()?></h3></a>
+            <h4><?php echo $this->getDelegationName()?></h4>
+        </div>
+        <div class="col-lg-4">
+            <h3><?php echo $this->getBillName()?></h3>
+            <h4><?php echo $this->getNumber()?></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="page-header"></div>
+
+        <div class="col-lg-8"><?php echo $this->getBody()?></div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+</div>

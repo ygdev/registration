@@ -1,0 +1,43 @@
+<div class="bs-docs-section">
+    <div class="row">
+        <div class="col-lg-9">
+            <form class="bs-example form-horizontal" action="<?php echo Mage::getUrl('*/*/submitPost')?>" method="post">
+                <div class="well">
+                    <fieldset>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="select" class="col-lg-2 control-label">Delegate Name</label>
+                                <div class="col-lg-10">
+                                    <select name="student_id" class="form-control" id="select">
+                                        <?php foreach($this->_getStudents() as $student):?>
+                                        <option value="<?php echo $student->getId()?>"><?php echo$student->getName()?></option>
+                                        <?php endforeach?>
+                                    </select>
+                                </div>
+                                <label for="billname" class="col-lg-2 control-label">Bill Name</label>
+                                <div class="col-lg-10">
+                                    <input name="bill_number" type="text" class="form-control" id="billname" placeholder="Bill Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="textArea" class="col-lg-2 control-label">Bill Content</label>
+                            <div class="col-lg-10">
+                                <textarea name="content" class="form-control" rows="10" id="textArea" placeholder="Type or paste the bill here."></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="button" onclick="location.href='<?php echo Mage::getUrl('reg/index/all')?>';" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-3">
+
+        </div>
+    </div>
+</div>

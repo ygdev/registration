@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ymca_Bill>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Ymca_Bill>
+    </modules>
+</config>

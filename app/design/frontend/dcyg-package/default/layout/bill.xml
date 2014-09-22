@@ -1,0 +1,12 @@
+<layouts>
+    <bill_index_view>
+        <reference name="content">
+            <block type="bill/view" template="bill/view.phtml"/>
+        </reference>
+    </bill_index_view>
+    <bill_index_submit>
+        <reference name="content">
+            <block type="bill/submit" template="bill/submit.phtml"/>
+        </reference>
+    </bill_index_submit>
+</layouts>

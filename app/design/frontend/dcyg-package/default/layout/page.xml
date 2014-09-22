@@ -1,0 +1,22 @@
+<layout version="0.1.0">
+    <default translate="label" module="page">
+        <label>All Pages</label>
+        <block type="page/html" name="root" output="toHtml" template="page/1column.phtml">
+            <block type="page/html_head" name="head" as="head">
+                <action method="addCss"><stylesheet>css/bootstrap.css</stylesheet></action>
+                <action method="addCss"><stylesheet>css/dcyg.css</stylesheet></action>
+                <action method="addJs"><script>bootstrap.min.js</script></action>
+                <action method="addJs"><script>bootswatch.js</script></action>
+            </block>
+            <block type="page/html_header" name="header" as="header" translate="label">
+                <label>Header</label>
+            </block>
+            <block type="core/text_list" name="content" as="content" translate="label">
+                <label>Main Content Area</label>
+            </block>
+            <block type="page/html_footer" name="footer" as="footer" template="page/html/footer.phtml">
+                <label>Footer</label>
+            </block>
+        </block>
+    </default>
+</layout>

@@ -1,0 +1,41 @@
+<layouts>
+    <registration_index_view>
+        <reference name="content">
+            <block type="registration/student" name="student">
+                <block type="registration/student_overview" name="student.overview">
+                    <label>Student Overview</label>
+                </block>
+                <block type="registration/student_options" name="student.options">
+                    <label>Student Options</label>
+                </block>
+            </block>
+        </reference>
+    </registration_index_view>
+
+    <registration_advisor_login>
+        <reference name="head">
+            <action method="addJs"><script>login.js</script></action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" template="registration/advisor.login.phtml"/>
+        </reference>
+    </registration_advisor_login>
+
+    <registration_index_deleteconfirm>
+        <reference name="content">
+            <block type="core/template" template="registration/deletion.confirm.phtml" name="deletion.confirm"/>
+        </reference>
+    </registration_index_deleteconfirm>
+
+    <registration_index_all>
+        <reference name="content">
+            <block type="registration/delegation" name="delegation.table" />
+        </reference>
+    </registration_index_all>
+
+    <registration_index_edit>
+        <reference name="content">
+            <block type="registration/form_student" name="student.edit"/>
+        </reference>
+    </registration_index_edit>
+</layouts>

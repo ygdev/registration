@@ -1,0 +1,7 @@
+<layouts>
+    <registration_index_view>
+        <reference name="content">
+            <block type="registration/member" name="member.main" />
+        </reference>
+    </registration_index_view>
+</layouts>
